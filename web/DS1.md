@@ -1,178 +1,255 @@
 
-# Récapitulatif des Notions Clés pour Préparer le DS de Web Statique
+# Récapitulatif Complet pour le DS de Web Statique
 
-## **1. Positionnement en CSS**
+## **1. Les bases du HTML**
 
-### Les différents types de positionnement :
-- **static** (par défaut) : positionnement naturel des éléments sans modification.
-- **relative** : déplace l'élément par rapport à sa position normale.
-- **absolute** : positionne l'élément par rapport à son ancêtre positionné le plus proche.
-- **fixed** : l'élément reste fixe par rapport à la fenêtre, même en cas de défilement.
-- **sticky** : l'élément alterne entre `relative` et `fixed` selon le défilement.
+### Structure minimale d'une page HTML
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Page</title>
+</head>
+<body>
+  <header>
+    <h1>Bienvenue</h1>
+  </header>
+  <main>
+    <p>Ceci est un exemple de contenu.</p>
+  </main>
+  <footer>
+    <p>© 2024 Mon Site</p>
+  </footer>
+</body>
+</html>
+```
 
-### Propriétés importantes :
-- `top`, `right`, `bottom`, `left` : pour définir la position exacte d’un élément.
-- `z-index` : contrôle la superposition des éléments (plus la valeur est élevée, plus l'élément est devant).
-
----
-
-## **2. CSS Grid Layout**
-
-### Concepts de base :
-- Utilisé pour organiser des éléments en grilles bidimensionnelles (lignes et colonnes).
-
-### Propriétés principales :
-- `display: grid;` : transforme un conteneur en grille.
-- `grid-template-columns` et `grid-template-rows` : définissent la structure des colonnes et lignes.
-  - Exemple : `grid-template-columns: 100px 1fr;` (1 colonne fixe, 1 colonne fluide).
-
-### Positionnement des éléments :
-- `grid-area` : place un élément dans une zone définie.
-- `grid-template-areas` : organise les zones nommées.
-  - Exemple :
-    ```css
-    grid-template-areas:
-      "header header"
-      "menu content"
-      "footer footer";
-    ```
-
-### Unités utiles :
-- **fr** : unité fractionnaire pour répartir l’espace disponible.
-- **auto** : ajuste la taille automatiquement selon le contenu.
+### Balises importantes :
+- **Structuration** : `<header>`, `<main>`, `<footer>`, `<section>`, `<article>`.
+- **Texte** : `<p>`, `<h1>` à `<h6>`, `<span>`, `<strong>`, `<em>`.
+- **Liens et médias** : `<a>`, `<img>`, `<video>`, `<audio>`.
+- **Listes** : `<ul>` (non ordonnée), `<ol>` (ordonnée), `<li>` (élément de liste).
+- **Formulaires** : `<form>`, `<input>`, `<textarea>`, `<button>`, `<label>`.
 
 ---
 
-## **3. Flexbox**
+## **2. Les bases du CSS**
 
-### Concepts de base :
-- Flexbox organise les éléments dans une seule dimension (ligne ou colonne).
+### Inclure du CSS
+- **Interne** : directement dans un fichier HTML.
+```html
+<style>
+  body {
+    background-color: lightblue;
+  }
+</style>
+```
+- **Externe** : via un fichier `.css`.
+```html
+<link rel="stylesheet" href="styles.css">
+```
+- **En ligne** : dans une balise HTML (à éviter).
+```html
+<p style="color: red;">Texte rouge</p>
+```
 
-### Propriétés importantes :
-- `display: flex;` : active le mode flexbox.
-- `flex-direction` : contrôle l'orientation (`row`, `column`, etc.).
-- `justify-content` : contrôle l’alignement horizontal.
-  - Valeurs : `flex-start`, `center`, `space-between`, `space-around`.
-- `align-items` : contrôle l’alignement vertical.
-  - Valeurs : `flex-start`, `center`, `stretch`.
-- `flex-wrap` : permet le retour à la ligne des éléments si nécessaire.
+### Sélecteurs CSS
+- **De base** :
+  - `h1` : tous les éléments `<h1>`.
+  - `.class` : éléments avec une classe spécifique.
+  - `#id` : élément avec un identifiant spécifique.
+- **Combinés** :
+  - `div p` : tous les `<p>` dans un `<div>`.
+  - `h1 + p` : le `<p>` immédiatement après un `<h1>`.
+  - `h1 ~ p` : tous les `<p>` après un `<h1>` (même parent).
 
-### Exemple : Centrer un élément
+---
+
+## **3. Positionnement en CSS**
+
+### Types de positionnement
+- **static** : position naturelle.
+- **relative** : déplacement relatif à la position normale.
+- **absolute** : par rapport à l’ancêtre positionné.
+- **fixed** : reste fixe, même lors du défilement.
+- **sticky** : bascule entre `relative` et `fixed`.
+
+### Exemples
+1. **Position absolue** :
 ```css
-.conteneur {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.boite {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+```
+2. **Position fixe** :
+```css
+.entete {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 ```
 
 ---
 
-## **4. Animations CSS**
+## **4. CSS Grid**
 
-### Étapes clés pour créer une animation :
-1. Définir les étapes avec `@keyframes`.
-   - Exemple :
-     ```css
-     @keyframes exemple {
-       0% { background-color: red; }
-       100% { background-color: blue; }
-     }
-     ```
-2. Appliquer l'animation à un élément :
-   - `animation-name` : nom de l’animation.
-   - `animation-duration` : durée totale (exemple : `10s`).
-   - `animation-fill-mode` : contrôle l'état final (exemple : `forwards` pour conserver).
-
----
-
-## **5. Sélecteurs CSS Avancés**
-
-### Quelques sélecteurs utiles :
-- **Généraux :**
-  - `h1, p` : cible les balises `h1` et `p`.
-  - `h1 ~ p` : cible tous les `p` suivant un `h1` (même parent).
-  - `h1 + p` : cible uniquement le `p` directement après un `h1`.
-
-- **Pseudo-classes :**
-  - `:hover` : applique un style quand on survole un élément.
-  - `:active` : applique un style pendant le clic.
-  - `:nth-child(n)` : cible le `n`-ème enfant.
-
----
-
-## **6. Media Queries**
-
-### Permettent de créer des designs responsifs :
-- Exemple : appliquer un style pour des écrans > 600px :
-  ```css
-  @media only screen and (min-width: 600px) {
-    body {
-      background-color: lightblue;
-    }
-  }
-  ```
-
-- Orientation spécifique :
-  ```css
-  @media (orientation: landscape) {
-    body {
-      font-size: 18px;
-    }
-  }
-  ```
-
----
-
-## **7. Divers**
-
-### Unités CSS :
-- `px` : pixels fixes.
-- `%` : pourcentage relatif au parent.
-- `vh`, `vw` : pourcentage de la hauteur/largeur de la fenêtre.
-
-### Propriété `clear` :
-- Utilisée pour empêcher les chevauchements avec des éléments flottants :
-  ```css
-  h2 {
-    clear: right;
-  }
-  ```
-
-### Propriété `gap` :
-- Ajoute des espaces entre les éléments dans une grille ou un flex container.
-
----
-
-## **8. Exemples Typiques**
-
-### CSS Grid Exemple Complet :
+### Grilles en 2D
+- Déclaration de base :
 ```css
 .conteneur {
   display: grid;
-  grid-template-areas:
-    "header header"
-    "menu content"
-    "footer footer";
-  grid-template-columns: 1fr 2fr;
-  gap: 10px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px; /* Espacement */
 }
-
-.header { grid-area: header; }
-.menu { grid-area: menu; }
-.content { grid-area: content; }
-.footer { grid-area: footer; }
+```
+- Nommer les zones :
+```css
+grid-template-areas:
+  "header header header"
+  "menu content aside"
+  "footer footer footer";
 ```
 
-### Flexbox Exemple Complet :
+### Positionner les éléments
 ```css
-.conteneur {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.header {
+  grid-area: header;
 }
 ```
 
 ---
 
+## **5. Flexbox**
+
+### Organisation en 1D
+- Déclaration de base :
+```css
+.conteneur {
+  display: flex;
+  flex-direction: row; /* Orientation horizontale */
+  justify-content: space-between; /* Espacement horizontal */
+  align-items: center; /* Alignement vertical */
+}
+```
+
+### Exemples avancés
+1. **Flex-wrap** :
+```css
+.conteneur {
+  flex-wrap: wrap;
+}
+```
+2. **Alignement individuel** :
+```css
+.element {
+  align-self: flex-end;
+}
+```
+
+---
+
+## **6. Animations CSS**
+
+### Étapes d’une animation
+1. Déclarer les étapes :
+```css
+@keyframes changerCouleur {
+  0% { background-color: red; }
+  50% { background-color: green; }
+  100% { background-color: blue; }
+}
+```
+2. Lier à un élément :
+```css
+.boite {
+  animation: changerCouleur 10s linear forwards;
+}
+```
+
+---
+
+## **7. Media Queries**
+
+### Exemple
+```css
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+```
+
+---
+
+## **8. Bonnes pratiques**
+
+### Structure du code
+- Toujours valider le HTML/CSS avec des validateurs en ligne.
+- Utiliser des classes au lieu d’identifiants (`#id`) pour styliser plusieurs éléments.
+
+### Responsivité
+- Utiliser des unités relatives comme `%`, `em`, `rem`, `vh`, et `vw`.
+- Privilégier des mises en page fluides avec `flexbox` ou `grid`.
+
+---
+
+## **9. Exemples de mise en page complète**
+
+### Exemple avec CSS Grid
+```html
+<div class="conteneur">
+  <div class="entete">Entête</div>
+  <div class="menu">Menu</div>
+  <div class="contenu">Contenu</div>
+  <div class="aside">Aside</div>
+  <div class="pied">Pied</div>
+</div>
+
+<style>
+.conteneur {
+  display: grid;
+  grid-template-areas:
+    "entete entete entete"
+    "menu contenu aside"
+    "pied pied pied";
+  gap: 10px;
+}
+.entete { grid-area: entete; }
+.menu { grid-area: menu; }
+.contenu { grid-area: contenu; }
+.aside { grid-area: aside; }
+.pied { grid-area: pied; }
+</style>
+```
+
+### Exemple avec Flexbox
+```html
+<div class="conteneur">
+  <div class="element">Élément 1</div>
+  <div class="element">Élément 2</div>
+  <div class="element">Élément 3</div>
+</div>
+
+<style>
+.conteneur {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.element {
+  flex: 1;
+  margin: 10px;
+  text-align: center;
+}
+</style>
+```
+
+---
+
+Avec ces notions et exemples, tu es paré pour réussir ton DS ! 💪✨
