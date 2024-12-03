@@ -249,7 +249,3 @@ grid-template-areas:
 }
 </style>
 ```
-
----
-
-Avec ces notions et exemples, tu es paré pour réussir ton DS ! 💪✨
