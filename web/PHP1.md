@@ -250,5 +250,9 @@ var_dump(5 === "5"); // false
 
 ---
 
-## Conclusion
-Ce résumé couvre **toutes les notions essentielles** du PHP abordées dans le QCM. Avec ça, tu peux **réviser rapidement** et **maîtriser les bases** de PHP efficacement. 🚀
+## Pour réviser efficacement:
+Envoie à ChatGPT : 
+- Ce fichier
+- Le QCM de l'année dernière
+Et demande lui de te générer des qcms similaires pour que t'y réponde
+Fait ça jusqu'à obtenir toujours des bons scores
