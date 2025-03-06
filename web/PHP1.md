@@ -254,5 +254,7 @@ var_dump(5 === "5"); // false
 Envoie à ChatGPT : 
 - Ce fichier
 - Le QCM de l'année dernière
+
+
 Et demande lui de te générer des qcms similaires pour que t'y réponde
 Fait ça jusqu'à obtenir toujours des bons scores
