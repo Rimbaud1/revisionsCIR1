@@ -1,42 +1,44 @@
 # 📐 Animations de transformations linéaires 
 
-Ce dossier contient des animations pédagogiques créées pour illustrer différentes transformations linéaires en 2D.
+Ce dossier contient une série d’animations illustrant des **transformations linéaires** en 2D
 
 ---
 
 ## 🔁 Rotation
 
-**🎥 [`RotationTheta.mp4`](./RotationTheta.mp4)**  
-> Rotation d’un vecteur par un angle \( \theta \), avec application sur un vecteur \(\vec{u}\), tracé de l’angle, calcul symbolique et représentation géométrique.  
-> Ici : \( \theta = \frac{\pi}{4} \)
+**🎥 Rotation d’un vecteur par un angle \( \theta \)**  
+🧮 Application de la matrice de rotation sur \( \vec{u} = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \), calculs symboliques, angle tracé, visualisation propre.
+
+👉 [Voir la vidéo](https://sendvid.com/j7zslzvn)
 
 ---
 
 ## ↔️ Réflexions
 
-- **🎥 [`ReflexionYEqualX.mp4`](./ReflexionYEqualX.mp4)**  
-  > Réflexion par rapport à la droite \( y = x \)
+- **Réflexion par rapport à l’axe \( Oy \)**  
+  👉 [Voir la vidéo](https://sendvid.com/0sf5uuf8)
 
-- **🎥 [`ReflexionOY.mp4`](./ReflexionOY.mp4)**  
-  > Réflexion par rapport à l’axe \( Oy \)
+- **Réflexion par rapport à l’axe \( Ox \)**  
+  👉 [Voir la vidéo](https://sendvid.com/555zjguq)
 
-- **🎥 [`ReflexionOX.mp4`](./ReflexionOX.mp4)**  
-  > Réflexion par rapport à l’axe \( Ox \)
+- **Réflexion par rapport à la droite \( y = x \)**  
+  👉 [Voir la vidéo](https://sendvid.com/azc8uvla)
 
 ---
 
 ## 🧩 Homothétie
 
-**🎥 [`Homothetie.mp4`](./Homothetie.mp4)**  
-> Transformation de mise à l’échelle centrée à l’origine, avec un rapport \( \lambda \).  
-> Ici : \( \lambda = 2 \)
+**🎥 Homothétie de rapport \( \lambda \)**  
+Visualisation de la mise à l’échelle avec \( \lambda = 2 \) : le vecteur s’agrandit sans changer de direction.
+
+👉 [Voir la vidéo](https://sendvid.com/x2imp9qe)
 
 ---
 
 ## 🎯 Projection orthogonale
 
-**🎥 [`ProjectionOx.mp4`](./ProjectionOx.mp4)**  
-> Projection orthogonale sur l’axe \( Ox \). La composante \( y \) est annulée.  
-> Visualisation de la chute verticale vers l’axe.
+**🎥 Projection orthogonale sur l’axe \( Ox \)**  
+Calculs complets et visualisation graphique de la projection verticale d’un vecteur sur l’axe des abscisses.
 
+👉 [Voir la vidéo](https://sendvid.com/fkg9ihzj)
 
