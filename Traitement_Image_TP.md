@@ -191,5 +191,5 @@ imshow(cercle, cmap='gray')
 ---
 
 🎯 Envoie ça à ChatGPT et demande lui : 
-Fait moi des qcms de 10 questions courtes sur ce cours et laisse moi répondre, tu me corrigeras ensuite et me donneras des qcms adaptés en fonction de mes difficultées.
+Pose moi 10 questions courtes sur ce cours et laisse moi répondre, tu me corrigeras ensuite et me donneras d'autres questions adaptés en fonction de mes difficultées.
 
