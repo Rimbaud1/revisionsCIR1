@@ -190,5 +190,6 @@ imshow(cercle, cmap='gray')
 
 ---
 
-🎯 *Comprendre les opérations matricielles, la manipulation des pixels et l’extraction des canaux est essentiel pour traiter les images en Python et SageMath.*
+🎯 Envoie ça à ChatGPT et demande lui : 
+Fait moi des qcms de 10 questions courtes sur ce cours et laisse moi répondre, tu me corrigeras ensuite et me donneras des qcms adaptés en fonction de mes difficultées.
 
